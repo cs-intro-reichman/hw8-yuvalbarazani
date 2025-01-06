@@ -52,6 +52,7 @@ public class UserTest {
         orly.addFollowee("Maya");
         orly.addFollowee("Talia");
         orly.addFollowee("Dror");
+        orly.addFollowee("Alex");
         System.out.println(orly);
 
         // Tests the countMutual method
