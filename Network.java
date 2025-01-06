@@ -31,7 +31,7 @@ public class Network {
     public User getUser(String name) {
         
         for (int i = 0; i < userCount; i++) {
-            if(users[i].getName().equals(name))
+            if(users[i].getName().toLowerCase().equals(name.toLowerCase()))
                 return users[i];
         }
         return null;
@@ -68,7 +68,7 @@ public class Network {
         User u1= getUser(name); // the user with the given name 
         int max;
         String maxName;
-        if(!users[0].getName().equals(name)){
+        if(!users[0].getName().toLowerCase().equals(name.toLowerCase())){
              max= u1.countMutual(users[0]);
             maxName=users[0].getName();
         }
@@ -77,7 +77,7 @@ public class Network {
             maxName=users[1].getName(); 
         }
         for (int i = 1; i < userCount; i++) {
-            if(u1.countMutual(users[i])>max && !users[i].getName().equals(name)){
+            if(u1.countMutual(users[i])>max && !users[i].getName().toLowerCase().equals(name.toLowerCase())){
                 max= u1.countMutual(users[i]);
                 maxName= users[i].getName();
             }
